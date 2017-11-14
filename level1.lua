@@ -83,13 +83,18 @@ function scene:create( event )
        flame1.y = display.contentCenterY + 43
        flame1.rotation = 90
 
-       flame2 = display.newImageRect("asset/image/flame3a.png",120,320)
+       flame2 = display.newImageRect("asset/image/flame2.png",120,320)
        flame2.x = 990
        flame2.y = display.contentCenterY + 43
-       flame2.rotation = 110
+       flame2.rotation = 90
+
+       flame3 = display.newImageRect("asset/image/flame3a.png",120,320)
+       flame3.x = 990
+       flame3.y = display.contentCenterY - 40
+       flame3.rotation = 110
        
 
-       scoreDisplay = display.newText ("score:0", 40, 290, native.systemFont, 35 )
+       scoreDisplay = display.newText ("score:0", 40, 290, native.systemFont, 22 )
        scoreDisplay:setFillColor(0.77,1.5,0.3)
 
        livesDisplay1 = display.newImageRect ("asset/image/diamond-green.png",30,30)
@@ -166,6 +171,7 @@ function scene:create( event )
         --flame fly-by
         transition.to( flame1, { x=-190, y = display.contentCenterY + 43, time=9000, transition=easing.inExpo, delay=1000,iterations=-1 } )
         transition.to( flame2, { x=-190, y = display.contentCenterY + 43, time=6000, transition=easing.inExpo, delay=5000,iterations=-1 } )
+        transition.to( flame3, { x=-190, y = display.contentCenterY - 40,  time=6000, transition=easing.inExpo, delay=9000,iterations=-1 } )
           --fire ball roll-by
           if(blueFire1.rotation>269 or blueFire2.rotation>269 ) then
             transition.to( blueFire1, { x=-190, y=30, rotation=-250, time=26000, transition=easing.inExpo, delay=2000,iterations=-1 } )
